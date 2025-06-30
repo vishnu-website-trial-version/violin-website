@@ -31,25 +31,71 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
-    nav {
+    .nav-container {
       max-width: 1000px;
       margin: auto;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3em;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 600;
-      padding: 12px 20px;
+      padding: 12px 16px;
       transition: 0.3s;
     }
 
     nav a:hover {
       background: #555;
       border-radius: 6px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8em;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #1b1b1b;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+        z-index: 1000;
+      }
+
+      nav a {
+        padding: 15px;
+        border-top: 1px solid #333;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
     }
 
     .hero {
@@ -114,21 +160,10 @@
       text-align: center;
     }
 
-    #about {
-      background: linear-gradient(to right, #e3f2fd, #fff3e0);
-    }
-
-    #classes {
-      background: linear-gradient(to right, #fff3e0, #f1f8e9);
-    }
-
-    #media {
-      background: linear-gradient(to right, #f0f0f0, #fafafa);
-    }
-
-    #contact {
-      background: linear-gradient(to right, #f1f8e9, #f9f9f9);
-    }
+    #about { background: linear-gradient(to right, #e3f2fd, #fff3e0); }
+    #classes { background: linear-gradient(to right, #fff3e0, #f1f8e9); }
+    #media { background: linear-gradient(to right, #f0f0f0, #fafafa); }
+    #contact { background: linear-gradient(to right, #f1f8e9, #f9f9f9); }
 
     h1 {
       font-family: 'Playfair Display', serif;
@@ -225,83 +260,8 @@
         transform: translateY(0);
       }
     }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-      }
-
-      h1 {
-        font-size: 2em;
-      }
-
-      p {
-        font-size: 1em;
-      }
-
-      section {
-        padding: 100px 20px;
-      }
-
-      .cta-button {
-        padding: 10px 20px;
-      }
-
-      #social a:hover {
-        opacity: 0.8;
-        transform: scale(1.15);
-        transition: all 0.3s ease;
-      }
-      .nav-container {
-  max-width: 1000px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.logo {
-  color: white;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3em;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 1.8em;
-  color: white;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    background: #1b1b1b;
-  }
-
-  nav a {
-    padding: 15px;
-    border-top: 1px solid #333;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav.active {
-    display: flex;
-  }
-}
-
-
-    }
   </style>
 </head>
-
 <body>
 
 <header>
@@ -320,7 +280,6 @@
   </div>
 </header>
 
-
 <section id="home" class="hero">
   <div class="hero-content">
     <h1>Kumbhakodu Violin School</h1>
@@ -332,9 +291,7 @@
 <section id="about">
   <h1>About the Artist</h1>
   <p><strong>Rajesh Kumbhakodu</strong> founded Kumbhakodu Violin School and Music Classes in 2005 with the vision of bringing music education to learners of all ages and backgrounds.</p>
-  <p>We offer a vibrant and enriching experience for individuals seeking to explore their musical talents. Whether you are a beginner or looking to enhance your skills, these classes provide expert instruction in various instruments, vocal techniques, and music theory. Students can choose from diverse genres including classical, jazz, rock, and pop, allowing for personal expression and creativity.</p>
-  <p>Our classes focus on building confidence, encouraging collaboration, and creating performance opportunities — making them ideal for aspiring musicians.</p>
-
+  <p>We offer a vibrant and enriching experience for individuals seeking to explore their musical talents...</p>
   <div class="carousel-wrapper">
     <div class="carousel-track">
       <img src="images/1.jpg" class="carousel-slide" alt="Gallery Image 1">
@@ -342,13 +299,12 @@
       <img src="images/3.jpg" class="carousel-slide" alt="Gallery Image 3">
       <img src="images/4.jpg" class="carousel-slide" alt="Gallery Image 4">
     </div>
-
   </div>
 </section>
 
 <section id="classes">
   <h1>Our Classes</h1>
-  <p>We offer beginner-friendly and intermediate-level online sessions. Flexible scheduling, 1-on-1 format, and accessible through any online platform.</p>
+  <p>We offer beginner-friendly and intermediate-level online sessions...</p>
   <div class="img-group">
     <img src="images/maxresdefault.jpg" alt="Online Violin Class">
   </div>
@@ -364,28 +320,24 @@
 
 <section id="contact">
   <h1>Contact Us</h1>
-  <p>Ready to begin your music journey? Let’s connect!</p>
   <p>📞 <a href="https://wa.me/919042390696">+91 90423 90696 (WhatsApp)</a></p>
   <p>📧 <a href="mailto:rajeshkumbhakodu@gmail.com">rajeshkumbhakodu@gmail.com</a></p>
 </section>
 
 <section id="social" style="text-align: center; padding: 50px 20px;">
-  <h2 style="font-size: 2em; font-weight: bold; margin-bottom: 10px;">Follow the Artist</h2>
-  <p style="font-size: 1em; color: #666;">Stay connected with <strong>Rajesh Kumbhakodu</strong> on your favorite platforms:</p>
-  <div style="margin-top: 25px;">
-    <a href="https://www.facebook.com/Kumbhakodu/" target="_blank" style="margin: 0 15px; color: #3b5998; text-decoration: none;">
+  <h2 style="font-size: 2em;">Follow the Artist</h2>
+  <div>
+    <a href="https://www.facebook.com/Kumbhakodu/" target="_blank" style="margin: 0 15px; color: #3b5998;">
       <i class="fab fa-facebook fa-2x"></i>
     </a>
-    <a href="https://www.instagram.com/rajeshkumbhakodu/?hl=en" target="_blank" style="margin: 0 15px; color: #e1306c; text-decoration: none;">
+    <a href="https://www.instagram.com/rajeshkumbhakodu/?hl=en" target="_blank" style="margin: 0 15px; color: #e1306c;">
       <i class="fab fa-instagram fa-2x"></i>
     </a>
-    <a href="https://www.youtube.com/@rajeshkumbhakodu7311" target="_blank" style="margin: 0 15px; color: #ff0000; text-decoration: none;">
+    <a href="https://www.youtube.com/@rajeshkumbhakodu7311" target="_blank" style="margin: 0 15px; color: #ff0000;">
       <i class="fab fa-youtube fa-2x"></i>
     </a>
   </div>
 </section>
-
-
 
 <footer>
   &copy; 2025 Kumbhakodu Violin School and Music Classes. All rights reserved.
@@ -409,16 +361,13 @@
   window.addEventListener('resize', updateCarousel);
   window.addEventListener('load', () => {
     updateCarousel();
-    setInterval(autoSlide, 3000); // Change image every 3 seconds
+    setInterval(autoSlide, 3000);
   });
 
   document.getElementById('menu-toggle').addEventListener('click', function () {
-  const nav = document.getElementById('navbar');
-  nav.classList.toggle('active');
-});
-
+    document.getElementById('navbar').classList.toggle('active');
+  });
 </script>
-
 
 </body>
 </html>
